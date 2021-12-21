@@ -118,23 +118,24 @@ class HBNBCommand(cmd.Cmd):
         if not kwargs:
             print("** class name missing **")
             return
-        #breaking the arguments kwargs into a list
+
+        # breaking the arguments kwargs into a list
         args_list = kwargs.split()
         class_name = args_list[0]
-        
-        #checking if the classname is a valid one
+
+        # checking if the classname is a valid one
         if class_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
         new_instance = HBNBCommand.classes[class_name]()
 
-        #class attributes
+        # class attributes
         attr = args_list[1:]
 
-        #split the attributes into key, value pairs
+        # split the attributes into key, value pairs
         for attribute in attr:
             key, value = attribute.split('=')
-            value = value.replace('_',' ')
+            value = value.replace('_', ' ')
 
             if value[0] == value[-1] == '"':
                 value = value[1: -1]
