@@ -1,11 +1,37 @@
 #!/usr/bin/python3
 """This module defines a base class for all models in our hbnb clone"""
+import models
 import uuid
+from os import environ
 from datetime import datetime
+from sqlalchemy import Column, String, ForeignKey, Integer
+from sqlalchemy import *
+
+Base = declarative_base()
+
+
+a = "HBNB_TYPE_STORAGE"
 
 
 class BaseModel:
     """A base class for all hbnb models"""
+    if s in environ.keys() and environ["HBNB_TYPE_STORAGE"] == "db":
+        id = Column(
+            String(60),
+            unique7=True,
+            nullable=False,
+            primary_key=True,
+            default = str(
+            uuid.uuid4()))
+        created_at = Column(
+            DateTime,
+            nullable=False,
+            default=datetime.utcnow())
+        updated_at = Column(
+            DateTime,
+            nullable=False,
+            default=datetime.utcnow())
+
     def __init__(self, *args, **kwargs):
         """Instatntiates a new model"""
         if not kwargs:
@@ -42,3 +68,7 @@ class BaseModel:
         dictionary['created_at'] = self.created_at.isoformat()
         dictionary['updated_at'] = self.updated_at.isoformat()
         return dictionary
+
+    def delete(self):
+        models.storage.delete(self)
+        models.storage.save()
