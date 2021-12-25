@@ -7,6 +7,7 @@ from os import getenv
 import models
 from models import *
 
+
 class State(BaseModel, Base):
     """ State class """
     name = Column(
