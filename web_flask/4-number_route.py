@@ -35,6 +35,11 @@ def c(text):
     return "C {}".format(text)
 
 
+@app.route("/python", strict_slashes=False)
+def python_magic():
+    return "Python is cool"
+
+
 @app.route("/python/<text>", strict_slashes=False)
 def python(text="is cool"):
     """Displays 'python' followed by the value of <text>"""
