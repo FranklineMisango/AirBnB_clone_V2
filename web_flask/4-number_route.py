@@ -42,11 +42,6 @@ def python(text="is cool"):
     return "Python {}".format(text)
 
 
-@app.route("/python", strict_slashes=False)
-def python():
-    return "Python is cool"
-
-
 @app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
     """Displays 'n is a number' if n is an integer"""

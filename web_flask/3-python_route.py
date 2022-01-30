@@ -33,7 +33,7 @@ def c(text):
     return "C {}".format(text)
 
 @app.route("/python", strict_slashes=False)
-def python():
+def python_magic():
     return "Python is cool"
 
 
