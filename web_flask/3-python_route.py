@@ -20,15 +20,18 @@ app = Flask(__name__)
 def hello_hbnb():
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     return 'HBNB'
+
 
 @app.route("/c/<text>", strict_slashes=False)
 def c(text):
     """Displays 'C' followed by the value of <text>"""
     text = text.replace("_", " ")
     return "C {}".format(text)
+
 
 @app.route("/python/<text>", strict_slashes=False)
 def python(text="is cool"):
