@@ -4,7 +4,7 @@ A script that starts a Flask Web Application
 /: Diplays "Hello HBNB!"
 /hbnb: Displays "HBNB"
 /c/<text>: display “C ” followed by \
-    the value of the text variable 
+    the value of the text variable
     (replace underscore _ symbols with a space )
 """
 

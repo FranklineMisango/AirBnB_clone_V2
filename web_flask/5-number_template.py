@@ -3,7 +3,7 @@
 A script that starts a Flask Web Application
 /: Diplays "Hello HBNB!"
 /hbnb: Displays "HBNB"
-/c/<text>: display “C ” followed by \
+/c/<text>: display “C ” followed by
     the value of the text variable
 /python/(<text>): display “Python ”,
     followed by the value of the text variable
